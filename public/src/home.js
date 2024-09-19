@@ -7,9 +7,7 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method here. 
-  // If you get stuck, feel free to take a look at this repl.it: https://replit.com/@thinkful/getBooksBorrowedCount#index.js
+
 
   return books.filter((book) => {
     const recent = book.borrows[0];
@@ -74,7 +72,7 @@ function getMostPopularAuthors(books, authors) {
   }, {});
 
   for (let id in count) {
-    const sum = count[id].reduce((a, b) => a + b);
+    const sum = count[id].reduce((sum, borrowCount) => sum + borrowCount);
     count[id] = sum;
   }
 
